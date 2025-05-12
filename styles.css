@@ -1,0 +1,398 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: #a52a2a;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 2.5em;
+}
+
+h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #a52a2a;
+}
+
+.main-content {
+    position: relative;
+}
+
+.content-tabs {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -60px;
+    top: 0;
+}
+
+.content-tab {
+    display: none;
+}
+
+.content-tab.active {
+    display: block;
+}
+
+.tab {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+    transition: background 0.3s;
+}
+
+.tab.active {
+    background: #a52a2a;
+    color: #e0e0e0;
+}
+
+.tab.disabled {
+    background: #2a2a2a;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.tab:hover:not(.disabled) {
+    background: #4a4a4a;
+}
+
+.tab i {
+    font-size: 1.5em;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: #3a3a3a;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.search-form label {
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.search-form input, .search-form select {
+    padding: 8px;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background-color: #a52a2a;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #7a1f1f;
+}
+
+.favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-height: 600px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.creature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.creature-card {
+    background: #e0e0e0;
+    padding: 15px;
+    border: 2px solid #4a4a4a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+    color: #2a2a2a;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    flex: 0 0 250px;
+}
+
+.creature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #4a4a4a;
+}
+
+.favorite-btn.favorited {
+    color: #ffd700;
+}
+
+.creature-details {
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    display: none;
+    color: #2a2a2a;
+    border: 2px solid #4a4a4a;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    margin-bottom: 20px;
+}
+
+.creature-details.active {
+    display: block;
+}
+
+.creature-details .favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #4a4a4a;
+    border-bottom: none;
+    transition: background 0.3s;
+}
+
+.tab.active {
+    background: #e0e0e0;
+    color: #2a2a2a;
+    border-bottom: 2px solid #a52a2a;
+}
+
+.tab:hover {
+    background: #4a4a4a;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.stat-block p {
+    margin: 5px 0;
+}
+
+.stat-block h3 {
+    color: #a52a2a;
+    margin-top: 15px;
+}
+
+.abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.abilities span {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.traits {
+    margin: 5px 0;
+}
+
+.trait {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.trait-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a2a2a;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+    width: 200px;
+    max-width: 200px;
+    white-space: normal;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.trait:hover .trait-tooltip {
+    display: block;
+}
+
+.trait-separator {
+    margin: 0 5px;
+    color: #2a2a2a;
+}
+
+.dice-roll {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.dice-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a2a2a;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+    min-width: 200px; /* Ensure enough width for horizontal dice */
+    max-width: 400px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.dice-roll:hover .dice-tooltip {
+    display: block;
+}
+
+.dice-row {
+    display: flex;
+    flex-direction: row; /* Explicitly horizontal */
+    flex-wrap: nowrap; /* Prevent wrapping within a row */
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.dice-box {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 3px;
+    padding: 2px 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.dice-modifier {
+    color: silver;
+    padding: 2px 6px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.dice-total {
+    border: 2px solid #4a4a4a;
+    border-radius: 3px;
+    padding: 4px 12px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    font-size: 1.8em; /* Doubled font size for total */
+}
+
+.total-red {
+    color: #ff0000;
+}
+
+.total-gold {
+    color: #ffd700;
+}
+
+.total-silver {
+    color: #c0c0c0;
+}
+
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+    }
+    .search-form input, .search-form select, .search-form button {
+        width: 100%;
+    }
+    .creature-card {
+        padding: 10px;
+    }
+    .content-tabs {
+        right: -50px;
+    }
+    .tab {
+        width: 40px;
+        height: 40px;
+    }
+    .tab i {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Creature Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>D&D Creature Database</h1>
+        <div class="main-content">
+            <div class="content-tabs">
+                <div class="tab active" onclick="UIModule.switchContentTab('search', this)">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+                <div class="tab" id="favoritesTab" onclick="UIModule.switchContentTab('favorites', this)">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="content-area">
+                <div id="search" class="content-tab active">
+                    <div class="search-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="e.g., Aboleth">
+                        <label for="alignment">Alignment:</label>
+                        <select id="alignment">
+                            <option value="">Any</option>
+                            <option value="lawful good">Lawful Good</option>
+                            <option value="neutral good">Neutral Good</option>
+                            <option value="chaotic good">Chaotic Good</option>
+                            <option value="lawful neutral">Lawful Neutral</option>
+                            <option value="neutral">Neutral</option>
+                            <option value="chaotic neutral">Chaotic Neutral</option>
+                            <option value="lawful evil">Lawful Evil</option>
+                            <option value="neutral evil">Neutral Evil</option>
+                            <option value="chaotic evil">Chaotic Evil</option>
+                        </select>
+                        <label for="type">Creature Type:</label>
+                        <select id="type">
+                            <option value="">Any</option>
+                            <option value="humanoid">Humanoid</option>
+                            <option value="aberration">Aberration</option>
+                        </select>
+                        <label for="cr">CR:</label>
+                        <input type="text" id="cr" placeholder="e.g., 3 or 3-6">
+                        <button onclick="searchCreatures()">Search</button>
+                    </div>
+                </div>
+                <div id="favorites" class="content-tab">
+                    <div class="favorites-list" id="favoritesList"></div>
+                </div>
+            </div>
+            <div class="creature-details" id="creatureDetails"></div>
+            <div class="creature-list" id="creatureList"></div>
+        </div>
+    </div>
+    <script src="creatureDatabase.js"></script>
+    <script src="loreDatabase.js"></script>
+    <script src="statsDatabase.js"></script>
+    <script src="uiModule.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
